@@ -12,7 +12,7 @@ iface eth0 inet static
 echo "Installing rsync"
 sudo apt-get install rsync
 echo "Merging files/ with /"
-sudo rsync -avh files /
+sudo rsync -avh files/ /
 
 echo "Installing btsync"
 mkdir btsync
