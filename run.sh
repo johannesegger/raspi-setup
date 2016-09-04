@@ -9,9 +9,6 @@ iface eth0 inet static
     broadcast 192.168.0.255
     gateway 192.168.0.1' >> /etc/network/interfaces"
 
-echo "Expand filesystem using `raspi-config` (Launching raspi-config in 3 seconds)"
-sleep 3
-sudo raspi-config
 echo "Installing rsync"
 sudo apt-get install rsync
 echo "Merging files/ with /"
