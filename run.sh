@@ -18,7 +18,7 @@ sudo update-rc.d btsync defaults
 cd ..
 
 echo "Mounting data drive"
-sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults 0 0' > /etc/fstab
+sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults 0 0' >> /etc/fstab"
 sudo mount -a
 
 echo "Starting btsync"
