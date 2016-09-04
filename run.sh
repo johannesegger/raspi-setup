@@ -8,10 +8,6 @@ sudo apt-get install rsync
 echo "Merging files/ with /"
 sudo rsync -avh files /
 
-echo "Changing permissions of copied files"
-sudo chmod +x /etc/init.d/btsync
-sudo chmod +x /home/osmc/reset-time.sh
-
 echo "Installing btsync"
 mkdir btsync
 cd btsync
