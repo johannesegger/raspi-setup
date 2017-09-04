@@ -28,6 +28,6 @@ sudo mkdir /mnt/exti
 sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults,noatime 0 0' >> /etc/fstab"
 sudo mount -a
 
-echo "Starting btsync"
+echo "Starting Resilio Sync"
 sudo ln -s /lib/arm-linux-gnueabihf/ld-linux.so.3 /lib/ld-linux.so.3
-sudo service btsync start
+sudo service rslsync start
