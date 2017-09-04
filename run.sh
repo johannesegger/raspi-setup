@@ -23,6 +23,10 @@ sudo mv rslsync /usr/bin
 sudo update-rc.d rslsync defaults
 cd ..
 
+echo "Generating SSL certificate"
+ssh-keygen -t rsa
+# Move to `/etc/ssl/certs/raspi.crt` and `/etc/ssl/private/raspi.key`, resp.
+
 echo "Mounting data drive"
 sudo mkdir /mnt/exti
 sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults,noatime 0 0' >> /etc/fstab"
