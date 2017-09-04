@@ -14,12 +14,12 @@ sudo apt-get install rsync
 echo "Merging files/ with /"
 sudo rsync -avh files/ /
 
-echo "Installing btsync"
-mkdir btsync
-cd btsync
+echo "Installing Resilio Sync"
+mkdir rslsync
+cd rslsync
 wget https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
 tar -xzvf resilio-sync_arm.tar.gz
-sudo mv btsync /usr/bin
+sudo mv rslsync /usr/bin
 sudo update-rc.d rslsync defaults
 cd ..
 
