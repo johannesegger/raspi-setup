@@ -17,10 +17,10 @@ sudo rsync -avh files/ /
 echo "Installing btsync"
 mkdir btsync
 cd btsync
-wget https://download-cdn.getsync.com/stable/linux-arm/BitTorrent-Sync_arm.tar.gz
-tar -xzvf BitTorrent-Sync_arm.tar.gz
+wget https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
+tar -xzvf resilio-sync_arm.tar.gz
 sudo mv btsync /usr/bin
-sudo update-rc.d btsync defaults
+sudo update-rc.d rslsync defaults
 cd ..
 
 echo "Mounting data drive"
