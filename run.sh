@@ -25,4 +25,4 @@ sudo mount -a
 
 echo "Starting Resilio Sync"
 sudo ln -s /lib/arm-linux-gnueabihf/ld-linux.so.3 /lib/ld-linux.so.3
-sudo service rslsync start
+sudo systemctl start rslsync
