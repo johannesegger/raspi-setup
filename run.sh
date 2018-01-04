@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Setting up static IP address"
-sudo bash -c "echo '
-iface eth0 inet static
-    address 192.168.0.14
-    network 192.168.0.0
-    netmask 255.255.255.0
-    broadcast 192.168.0.255
-    gateway 192.168.0.1' >> /etc/network/interfaces"
-
 echo "Installing rsync"
 sudo apt-get install rsync
 echo "Merging files/ with /"
