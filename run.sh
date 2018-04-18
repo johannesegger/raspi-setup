@@ -25,4 +25,4 @@ sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults,noatime 0 0' >> /etc/fstab
 sudo mount -a
 
 echo "Starting Resilio Sync"
-systemctl --user start resilio-sync
+sudo systemctl start resilio-sync
