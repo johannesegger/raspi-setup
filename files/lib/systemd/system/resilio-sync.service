@@ -7,7 +7,7 @@ After=network.target network-online.target
 Type=forking
 Restart=on-failure
 PIDFile=/home/pi/.config/resilio-sync/sync.pid
-ExecStart=/usr/bin/rslsync --config /home/pi/.config/resilio-sync/config.json
+ExecStart=/usr/bin/rslsync --config /home/pi/.config/resilio-sync/config.json --log /home/pi/.config/resilio-sync/log
 ExecStartPre=/etc/resilio-sync/init_user_config.sh
 
 [Install]
