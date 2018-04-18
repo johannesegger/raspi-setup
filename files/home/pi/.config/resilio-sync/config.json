@@ -6,7 +6,7 @@
   "storage_path" : "/mnt/exti/hannes/.sync",
 
 /* set location of pid file */
-  "pid_file" : "/home/pi/.sync/rslsync.pid",
+  "pid_file" : "/home/pi/.config/resilio-sync/sync.pid",
 
 /* use UPnP for port mapping */
   "use_upnp" : true,
@@ -47,9 +47,9 @@
 //  ,"password_hash_salt_unified" : "<any text>" // Salt for unified password's hash. Works on all platforms.
 //  ,"allow_empty_password" : false // Defaults to true
 /* ssl configuration */
-    ,"force_https" : true // disable http
-    ,"ssl_certificate" : "/etc/ssl/certs/raspi.crt"
-    ,"ssl_private_key" : "/etc/ssl/private/raspi.key"
+    ,"force_https" : false // disable http
+    // ,"ssl_certificate" : "/etc/ssl/certs/raspi.crt"
+    // ,"ssl_private_key" : "/etc/ssl/private/raspi.key"
 
 /* dir_whitelist defines which directories can be shown to user or have folders added (linux only)
    relative paths are relative to directory_root setting */

@@ -7,11 +7,14 @@ echo "Merging files/ with /"
 sudo rsync -avh files/ /
 
 echo "Installing Resilio Sync"
-# https://help.resilio.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux
-echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
-wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install resilio-sync
+mkdir rslsync
+cd rslsync
+wget https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
+tar -xzvf resilio-sync_arm.tar.gz
+sudo mv rslsync /usr/bin
+cd ..
+
+sudo ln -s /lib/arm-linux-gnueabihf/ld-linux.so.3 /lib/ld-linux.so.3
 sudo systemctl enable resilio-sync
 
 #echo "Generating SSL certificate"
