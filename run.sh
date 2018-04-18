@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 
 echo "Installing rsync"
+sudo apt-get update
 sudo apt-get install rsync
 echo "Merging files/ with /"
 sudo rsync -avh files/ /
 
 echo "Installing Resilio Sync"
-mkdir rslsync
-cd rslsync
-wget https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
-tar -xzvf resilio-sync_arm.tar.gz
-sudo mv rslsync /usr/bin
-sudo update-rc.d rslsync defaults
-cd ..
+# https://help.resilio.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux
+echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
+wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install resilio-sync
+sed -i '/WantedBy=multi-user\.target/c\WantedBy=default.target' /usr/lib/systemd/user/resilio-sync.service
+sudo systemctl --user enable resilio-sync
 
-echo "Generating SSL certificate"
-ssh-keygen -t rsa
+#echo "Generating SSL certificate"
+#ssh-keygen -t rsa
 # Move to `/etc/ssl/certs/raspi.crt` and `/etc/ssl/private/raspi.key`, resp.
 
 echo "Mounting data drive"
@@ -24,5 +25,4 @@ sudo bash -c "echo '/etc/sda1 /mnt/exti ext4 defaults,noatime 0 0' >> /etc/fstab
 sudo mount -a
 
 echo "Starting Resilio Sync"
-sudo ln -s /lib/arm-linux-gnueabihf/ld-linux.so.3 /lib/ld-linux.so.3
-sudo systemctl start rslsync
+systemctl --user start resilio-sync
