@@ -1,8 +1,8 @@
 # raspi-setup
-Setup instructions of my Raspberry PI.
+Setup instructions for my Raspberry Pi running [Resilio Sync](https://www.resilio.com/individuals/).
 
 ## Get started
 * Run `sudo raspi-config` to enable SSH and expand the file system.
-* Run `sudo apt-get update && sudo apt-get upgrade && sudo apt-get install git` to install git.
+* Run `sudo apt update && sudo apt upgrade -y && sudo apt install -y git` to install git.
 * Clone this repository: `git clone https://github.com/johannesegger/raspi-setup.git`
 * Run `sudo ./run.sh`
