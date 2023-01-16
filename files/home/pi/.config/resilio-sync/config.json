@@ -3,10 +3,10 @@
   "listening_port" : 0, // 0 - randomize port
 
 /* storage_path dir contains auxilliary app files if no storage_path field: .sync dir created in current working directory */
-  "storage_path" : "/mnt/exti/sync/.sync",
+  "storage_path" : "/usr/share/sync/.sync",
 
 /* set location of pid file */
-  "pid_file" : "/home/pi/.config/resilio-sync/sync.pid",
+  "pid_file" : "/usr/share/sync/sync.pid",
 
 /* use UPnP for port mapping */
   "use_upnp" : true,
@@ -24,7 +24,7 @@
 // "proxy_password" : "password",
 
 /* directory_root path defines where the WebUI Folder browser starts (linux only). Default value is / */
-  "directory_root" : "/mnt/exti/sync/",
+  "directory_root" : "/usr/share/sync/data/",
   
 /* directory_root_policy defines how directory_root is used (linux only).
    Valid values are:
