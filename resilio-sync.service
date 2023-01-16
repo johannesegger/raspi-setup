@@ -4,7 +4,7 @@ Documentation=https://help.getsync.com/
 After=network.target network-online.target
 
 [Service]
-User=pi
+User=root
 Type=forking
 Restart=on-failure
 PIDFile=/usr/share/sync/sync.pid
