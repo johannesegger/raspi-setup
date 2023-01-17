@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "Creating directories"
-sudo mkdir -p /usr/share/sync/.sync
-sudo mkdir -p /usr/share/sync/data
+mkdir -p ./sync/.sync
+mkdir -p ./sync/data
 
 echo "Copying config"
-sudo cp config.json /usr/share/sync/config.json
+cp config.json ./sync/config.json
 
 # echo "Starting container"
 # docker run -d --name sync \
