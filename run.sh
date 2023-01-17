@@ -26,3 +26,5 @@ popd
 echo "Starting Resilio Sync"
 sudo systemctl enable resilio-sync
 sudo systemctl start resilio-sync
+
+# TODO eventually change `disk_min_free_space` if sync incorrectly reports low free space (see https://forum.resilio.com/topic/44281-not-enough-free-space-when-there-is-enough/)
